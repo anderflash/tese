@@ -1,0 +1,70 @@
+\documentclass[11pt,twoside,a4paper,lang=en,antes]{imethesis}
+
+\title{
+	\br{Título da dissertação}
+	\en{Title}
+}
+\author{Anderson C. M. Tavares}
+
+\newcommand{\imgset}{\pazocal{I}}
+\newcommand{\adjac}{\pazocal{A}}
+\newcommand{\labelset}{\pazocal{L}}
+
+\newcommand{\imgdef}{$\textbf{I} = (\pazocal{I},I)$ }
+\newcommand{\dado}{\textsc{Dado}: }
+\newcommand{\encontrar}{\\\textsc{Encontrar}: }
+
+%\newmdtheoremenv[skipabove=0pt,skipbelow=0pt,linewidth=0.2mm, innertopmargin=-3pt,innerleftmargin=2pt,innerrightmargin=2pt,innerbottommargin=1pt]{problema}{\bfseries{Problema}}
+\newcommand{\piset}{\pi \in \Pi(\pazocal{I},E,t)}
+\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
+
+\makeindex
+\graphicspath{{./images/}}             % caminho das figuras (recomendável)
+
+\begin{document}
+	\br{\selectlanguage{brazil}}
+	\en{\selectlanguage{english}}
+	\input{cover}
+	\input{acknowledgments}
+	\input{abstract}
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	\printglossaries
+	\mainmatter
+	% cabeçalho para as páginas de todos os capítulos
+	\fancyhead[RE,LO]{\thesection}
+	\singlespacing              % espaçamento simples
+	\br{
+		\selectlanguage{brazil}
+		\input{pt-br/introducao}
+		\input{pt-br/objetivo}
+		\input{pt-br/fundamentos}
+		\input{pt-br/robustez}
+		\input{pt-br/resultados}
+		\input{pt-br/conclusao}
+	}
+	\en{
+		\selectlanguage{english}
+		\input{en/introduction}
+		\input{en/goals}
+		\input{en/background}
+		\input{en/robustness}
+		\input{en/results}
+		\input{en/conclusion}
+	}
+	% cabeçalho para os apêndices
+	\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\appendixname\ \thechapter}} {\MakeUppercase{#1}} }
+	\fancyhead[RE,LO]{}
+	\appendix
+	\br{
+		% \include{pt-br/ape1}
+	}
+	\en{
+		% \include{en/ape1}
+	}
+	\backmatter \singlespacing   % espaçamento simples
+	\bibliographystyle{plain}
+	\bibliography{aux/library}
+	\printindex
+\end{document}

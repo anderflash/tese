@@ -30,3 +30,19 @@
 
 # Debug files
 *.dSYM/
+
+# Auxiliary Latex files
+*.aux
+*.bbl
+*.lof
+*.log
+*.lot
+*.pdf
+*.sync*
+*.toc
+*.out
+*.blg
+*.brf
+*.idx
+*.ilg
+*.ind
